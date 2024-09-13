@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntaxr - Engaging User Experiences</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .logo {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab-btn {
+            background: #3498db;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .tab-btn:hover, .tab-btn.active {
+            background: #2980b9;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .contact-info {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Syntaxr</h1>
+    </header>
+    <div class="container">
+        <img src="BRANDLOGO.png" alt="Syntaxr Logo" class="logo">
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'home')">Home</button>
+            <button class="tab-btn" onclick="openTab(event, 'brand')">Brand Info</button>
+            <button class="tab-btn" onclick="openTab(event, 'privacy')">Privacy Policy</button>
+        </div>
+
+        <div id="home" class="tab-content active">
+            <h2>About Syntaxr</h2>
+            <p>Syntaxr is a brand dedicated to providing engaging and delightful user experiences. We specialize in creating high-quality apps that meet the highest standards of performance and user satisfaction.</p>
+            <p>Our commitment to excellence ensures that every app we develop is not just functional, but also intuitive and enjoyable to use.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.Syntaxr.Cellz" class="btn">Download Our Latest App</a>
+        </div>
+
+        <div id="brand" class="tab-content">
+            <h2>Syntaxr Brand Information</h2>
+            <p>At Syntaxr, we believe in:</p>
+            <ul>
+                <li>Creating engaging and delightful user experiences</li>
+                <li>Ensuring high-quality performance in all our apps</li>
+                <li>Meeting and exceeding industry standards</li>
+                <li>Continuous innovation and improvement</li>
+            </ul>
+            <p>Our team of dedicated professionals works tirelessly to bring you apps that not only meet your needs but also exceed your expectations.</p>
+        </div>
+
+        <div id="privacy" class="tab-content">
+            <h2>Privacy Policy</h2>
+            <p>At Syntaxr, we take your privacy seriously. Our policy is simple:</p>
+            <ul>
+                <li>We do not collect any personal information from our users.</li>
+                <li>Our services do not involve the use of user data.</li>
+                <li>We are committed to providing a safe and secure experience for all our users.</li>
+            </ul>
+            <p>Your privacy is our priority, and we strive to maintain the highest standards of data protection in all our applications.</p>
+        </div>
+
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>Email: syntaxrdev@gmail.com</p>
+            <p>Phone: +92 3705255759</p>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
